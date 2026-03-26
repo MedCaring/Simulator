@@ -1,0 +1,10 @@
+version: '3.8'
+
+services:
+  yaoguaiguai_sim:
+    build: .
+    volumes:
+      - ./data:/app/data   # 将容器内生成的数据挂载到本地
+      - ./logs:/app/logs   # 将容器内生成的日志挂载到本地
+    deploy:
+      replicas: 5  # [优]档专属配置：一键启动5个Docker容器实例！(相当于5x10=50个设备并发)
